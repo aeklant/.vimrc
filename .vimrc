@@ -8,3 +8,12 @@ set autoindent
 set number
 set scrolloff=5
 set ruler
+
+" Pathogen load
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
