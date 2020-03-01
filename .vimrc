@@ -1,3 +1,47 @@
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+" remember to run :PluginInstall when adding a new plugin
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Python AutoComplete
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Syntax checking
+Plugin 'vim-syntastic/syntastic'
+
+" PEP 8 
+Plugin 'nvie/vim-flake8'
+
+" Git integration
+Plugin 'tpope/vim-fugitive'
+
+" Fuzzy search
+Plugin 'kien/ctrlp.vim'
+
+" File Tree
+Plugin 'scrooloose/nerdtree'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -11,7 +55,7 @@ set autoindent
 set tw=90
 set colorcolumn=90
 highlight ColorColumn ctermbg=233
-set relativenumber
+set number relativenumber
 set scrolloff=5
 set ruler
 
@@ -35,9 +79,15 @@ map <Leader>s :sort<CR>
 map > >gv
 map < <gv
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Fold using space bar instead of za
+nnoremap <space> za
+
+" History
 set history=700
 set undolevels=700
 
-filetype off
-filetype plugin indent on
+let python_highlight_all=1
 syntax on
