@@ -33,6 +33,14 @@ Plugin 'kien/ctrlp.vim'
 " File Tree
 Plugin 'scrooloose/nerdtree'
 
+" Color Schemes
+" github jnurminel/Zenburn
+" must put the zenburn.vim file into ~/.vim/colors for it to work
+colors zenburn
+colorscheme zenburn
+set t_Co=256
+set background=dark
+
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
